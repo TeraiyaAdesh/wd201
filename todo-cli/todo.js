@@ -1,4 +1,3 @@
-// todo.js
 const todoList = () => {
   let all = [];
   const add = (todoItem) => {
