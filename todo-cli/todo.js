@@ -25,13 +25,15 @@ const todoList = () => {
     );
   };
 
-   const toDisplayableList = (list) => {
-    return list.map(
-      (item) =>
-        `${item.completed ? "[x]" : "[]"} ${item.title} ${
-          item.dueDate === new Date().toLocaleDateString("en-CA")
-        }`
-    );
+  const toDisplayableList = (list) => {
+    return list
+      .map(
+        (todo) =>
+          `${todo.completed ? "[x]" : "[ ]"} ${todo.title} ${
+            todo.dueDate == today ? "" : todo.dueDate
+          }`
+      )
+      .join("\n");
   };
   return {
     all,
