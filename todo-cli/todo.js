@@ -25,9 +25,12 @@ const todoList = () => {
     );
   };
 
-  const toDisplayableList = () => {
-    return all.filter(
-      (item) => item.dueDate === new Date().toLocaleDateString("en-CA")
+   const toDisplayableList = (list) => {
+    return list.map(
+      (item) =>
+        `${item.completed ? "[x]" : "[]"} ${item.title} ${
+          item.dueDate === new Date().toLocaleDateString("en-CA")
+        }`
     );
   };
   return {
